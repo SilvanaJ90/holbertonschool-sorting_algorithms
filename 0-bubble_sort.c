@@ -13,6 +13,12 @@ void swap(int *xp, int *yp)
 	*yp = temp;
 }
 
+/**
+ * bubble_sort - check code
+ * @array: pointer array
+ * @size: pointer size
+ */
+
 void bubble_sort(int *array, size_t size)
 {
 	/*clock_t begin = clock();*/
