@@ -26,6 +26,12 @@ void bubble_sort(int *array, size_t size)
 				swap(&array[j], &array[j + 1]);
 }
 
+/**
+ * printArray - check code
+ * @arr: value array
+ * @size: value size
+ */
+
 void printArray(int arr[], int size)
 {
 	int i;
