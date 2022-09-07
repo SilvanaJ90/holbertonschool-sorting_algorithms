@@ -49,7 +49,7 @@ void insertion_sort_list(listint_t **list)
 
 	listint_t *current = *list;
 
-	if (!current || !*current)
+	if (!current)
 		return;
 
 	while (current != NULL)
