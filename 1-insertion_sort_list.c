@@ -48,6 +48,9 @@ void insertion_sort_list(listint_t **list)
     /* insert every node to 'sorted */
 	listint_t *current = *list;
 
+	if (*list == NULL)
+		return;
+
 	while (current != NULL)
 	{
 		/* Store next for next iteration */
