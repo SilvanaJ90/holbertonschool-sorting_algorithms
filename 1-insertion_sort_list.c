@@ -49,7 +49,7 @@ void insertion_sort_list(listint_t **list)
 
 	listint_t *current = *list;
 
-	if (!current)
+	if (!*list)
 		return;
 
 	while (current != NULL)
@@ -67,5 +67,4 @@ void insertion_sort_list(listint_t **list)
 		current = next;
 	}
 	*list = sorted;
-	print_list(*list);
 }
