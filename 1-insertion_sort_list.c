@@ -42,15 +42,12 @@ void sortedInsert(listint_t **list, listint_t *newNode)
 void insertion_sort_list(listint_t **list)
 {
 	/* Initialize 'sorted' - a sorted doubly linked list */
-	listint_t *sorted = NULL;
+	listint_t *sorted = NULL, *current = NULL;
 
-	/* Traverse the given doubly linked list and */
-    /* insert every node to 'sorted */
-
-	if (*list == NULL)
+	if (list == NULL)
 		return;
 
-	listint_t *current = *list;
+	current = *list;
 
 	while (current != NULL)
 	{
