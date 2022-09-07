@@ -30,7 +30,6 @@ void sortedInsert(listint_t **list, listint_t *newNode)
 	current->next = newNode;
 	newNode->prev = current;
 	}
-	return;
 }
 
 
@@ -51,7 +50,7 @@ void insertion_sort_list(listint_t **list)
 
 	current = *list;
 
-	if (*list == NULL)
+	if (current == NULL)
 		return;
 
 	while (current != NULL)
