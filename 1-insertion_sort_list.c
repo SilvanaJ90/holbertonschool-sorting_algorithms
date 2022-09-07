@@ -1,8 +1,14 @@
 #include "sort.h"
 
+/**
+ * sortedInsert - check code
+ * @list: double pointer de list
+ * @newNode: node
+ */
+
 void sortedInsert(listint_t **list, listint_t *newNode)
 {
-	listint_t * current;
+	listint_t *current;
 
 	if (*list == NULL)
 		*list = newNode;
@@ -40,15 +46,14 @@ void insertion_sort_list(listint_t **list)
 
 	/* Traverse the given doubly linked list and */
     /* insert every node to 'sorted */
-    listint_t *current = *list;
+	listint_t *current = *list;
 
-	while(current != NULL)
+	while (current != NULL)
 	{
 		/* Store next for next iteration */
 		listint_t *next = current->next;
 
 		/* removing all the links so as to create 'current' */
-        /* as a new node for insertion */
 		current->prev = current->next = NULL;
 
 		/* insert current in 'sorted' doubly linked list */
