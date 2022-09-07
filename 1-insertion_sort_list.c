@@ -46,12 +46,10 @@ void insertion_sort_list(listint_t **list)
 
 	/* Traverse the given doubly linked list and */
     /* insert every node to 'sorted */
-	listint_t *current = NULL;
-
-	current = *list;
-
-	if (current == NULL)
+	if (!list || !*list)
 		return;
+
+	listint_t *current = *list;
 
 	while (current != NULL)
 	{
