@@ -29,6 +29,7 @@ void sortedInsert(listint_t **list, listint_t *newNode)
 		newNode->next->prev = newNode;
 	current->next = newNode;
 	newNode->prev = current;
+	print_list(*list);
 	}
 }
 
