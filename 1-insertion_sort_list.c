@@ -50,9 +50,6 @@ void insertion_sort_list(listint_t **list)
 
 	current = *list;
 
-	if (current == NULL)
-		return;
-
 	while (current != NULL)
 	{
 		/* Store next for next iteration */
@@ -68,4 +65,5 @@ void insertion_sort_list(listint_t **list)
 		current = next;
 	}
 	*list = sorted;
+	return;
 }
