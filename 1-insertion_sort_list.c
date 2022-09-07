@@ -47,7 +47,7 @@ void insertion_sort_list(listint_t **list)
 	/* Traverse the given doubly linked list and */
     /* insert every node to 'sorted */
 
-	if (list == NULL)
+	if (*list == NULL)
 		return;
 
 	listint_t *current = *list;
