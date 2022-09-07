@@ -28,11 +28,11 @@ void bubble_sort(int *array, size_t size)
 		return;
 
 	/* el -1 es porque no se quiere llegar al final */
-	for (i = 0; i < size - 1; i++)
+	for (i = 0; i < size - 1; i++)			/* n  */
 	{
-		for (j = 0; j < size - i - 1; j++)
+		for (j = 0; j < size - i - 1; j++)	/* n^2 */
 		{
-			if (array[j] > array[j + 1])
+			if (array[j] > array[j + 1])	/* n^2 */
 			{
 				/* Intercambiar  */
 				swap(&array[j], &array[j + 1]);
