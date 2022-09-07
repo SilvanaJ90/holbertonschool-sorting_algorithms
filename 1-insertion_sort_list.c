@@ -59,6 +59,7 @@ void insertion_sort_list(listint_t **list)
 
 		/* insert current in 'sorted' doubly linked list */
 		sortedInsert(&sorted, current);
+		print_list(*list);
 
 		/* Update current */
 		current = next;
