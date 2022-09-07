@@ -64,6 +64,5 @@ void insertion_sort_list(listint_t **list)
 		/* Update current */
 		current = next;
 	}
-	*list = sorted;
 	return;
 }
