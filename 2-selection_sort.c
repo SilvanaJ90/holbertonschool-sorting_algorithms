@@ -26,6 +26,7 @@ void selection_sort(int *array, size_t size)
 		if (i != indiceMenor)
 		{
 			double aux = array[i];
+
 			array[i] = array[indiceMenor];
 			array[indiceMenor] = aux;
 			print_array(array, size);
