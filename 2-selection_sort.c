@@ -22,13 +22,13 @@ void selection_sort(int *array, size_t size)
 		for (j = i + 1; j < size; j++)					/* n^2 */
 			if (array[j] < array[indiceMenor])			/* n^2 */
 				indiceMenor = j;
-		print_array(array, size);
-		/* situa el elemente mas pequeño en a[i] */
+				/* situa el elemente mas pequeño en a[i] */
 		if (i != indiceMenor)
 		{
 			double aux = array[i];
 			array[i] = array[indiceMenor];
 			array[indiceMenor] = aux;
 		}
+		print_array(array, size);
 	}
 }
