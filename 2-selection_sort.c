@@ -14,7 +14,7 @@ void selection_sort(int *array, size_t size)
 		return;
 
 	/* ordenar a[0]..a[n-2] y a[n-1] en cada pasada */
-	for (i = 0; i < size - 1; i++)						/* n */
+	for (i = 0; i < size - 1; i++)						/* n^2 */
 	{
 		/* Comienzo de la exploración en índice i */
 		indiceMenor = i;
