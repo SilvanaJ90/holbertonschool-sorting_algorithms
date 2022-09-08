@@ -1,67 +1,36 @@
 #include "sort.h"
 
 /**
- * sortedInsert - check code
- * @list: double pointer de list
- * @newNode: node
- */
-
-void sortedInsert(listint_t **list, listint_t *newNode)
-{
-	listint_t *current;
-
-	if (*list == NULL)
-	*list = newNode;
-
-	else if ((*list)->n >= newNode->n)
-	{
-		newNode->next = *list;
-		newNode->next->prev = newNode;
-		*list = newNode;
-	}
-	else
-	{
-		current = *list;
-		while (current->next != NULL && current->next->n < newNode->n)
-			current = current->next;
-		newNode->next = current->next;
-	if (current->next != NULL)
-		newNode->next->prev = newNode;
-	current->next = newNode;
-	newNode->prev = current;
-	}
-}
-
-
-
-/**
  * insertion_sort_list - check code
  * @list: doble pointer lista
  */
 
 void insertion_sort_list(listint_t **list)
 {
-	/* Initialize 'sorted' - a sorted doubly linked list */
-	listint_t *sorted = NULL, *current = NULL;
+	listint_t *current = NULL, *swap = NULL, *prev = NULL;
 
 	if (list == NULL)
 		return;
 
 	current = *list;
-
-	while (current != NULL)
+	while ((current = current->next))
 	{
-		/* Store next for next iteration */
-		listint_t *next = current->next;
+		swap = current;
+		while (swap->prev && swap->n < swap->prev->n)
+		{
+			prev = swap->prev;
+			if (swap->next)
+				swap->next->prev = prev;
+			if (prev->prev)
+				prev->prev->next = swap;
+			else
+				*list = swap;
+			prev->next = swap->next;
+			swap->prev = prev->prev;
+			swap->next = prev;
+			prev->prev = swap;
 
-		/* removing all the links so as to create 'current' */
-		current->prev = current->next = NULL;
-		/* insert current in 'sorted' doubly linked list */
-		sortedInsert(&sorted, current);
-		print_list(*list);
-
-		/* Update current */
-		current = next;
+			print_list(*list);
+		}
 	}
-	*list = sorted;
 }
