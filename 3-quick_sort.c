@@ -17,7 +17,9 @@ void swap(int *xp, int *yp)
  * partition - check code
  * @array: array
  * @size: size array
+ * Return: always i
  */
+
 
 int partition(int  *array, size_t size)
 {
@@ -59,8 +61,8 @@ void quick_sort(int *array, size_t size)
 
 	if (!array || size < 2)
 		return;
-
 	pivot = partition(array, size);
 	quick_sort(array, pivot);
 	quick_sort(array + pivot, size - pivot);
 }
+
