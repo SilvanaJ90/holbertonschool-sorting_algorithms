@@ -1,14 +1,18 @@
 #include "sort.h"
 
-
+/**
+ * quick_sort_aux - check code
+ * @array: array
+ * @first: value first
+ * @last: value last
+ * @size: size array
+ */
 
 void quick_sort_aux(int *array, int first, int last, size_t size)
 {
 	int i, j, central;
 	double pivote;
 
-	if (size < 1)
-		return;
 	i = first;
 	j = last;
 
@@ -30,13 +34,18 @@ void quick_sort_aux(int *array, int first, int last, size_t size)
 			i++;
 			j--;
 		}
-		print_array(array, size);
 	} while (i <= j);
 	if (first < j)
 		quick_sort_aux(array, first, j, size); /* proceso con sublista izqda */
 	if (i < last)
 		quick_sort_aux(array, i, last, size); /* mismo proceso sublista drcha */
 }
+
+/**
+ * quick_sort - check code
+ * @array: array
+ * @size
+ */
 
 void quick_sort(int *array, size_t size)
 {
