@@ -44,12 +44,15 @@ void quick_sort_aux(int *array, int first, int last, size_t size)
 /**
  * quick_sort - check code
  * @array: array
- * @size
+ * @size: size array
  */
 
 void quick_sort(int *array, size_t size)
 {
 	int first = 0, last = size - 1;
+
+	if (!array | !size)
+		return;
 
 	quick_sort_aux(array, first, last, size);
 }
