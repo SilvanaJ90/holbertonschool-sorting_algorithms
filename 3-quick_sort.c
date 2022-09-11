@@ -15,25 +15,25 @@ void swap(int *xp, int *yp)
 /**
  * quick_sort_aux - check code
  * @array: array
- * @first: value first
- * @last: value last
+ * @low: value first
+ * @high: value last
  * @size: size array
  */
 
 void quick_sort_aux(int *array, int low, int high, size_t size)
 {
-	int j = low, i = low; /*valHolder;*/
+	int j = low, i = low;
 	int pivote;
 
 	pivote = array[high];
-	if(low >= high)
+	if (low >= high)
 		return;
 
 	for (; i < high; i++)
 	{
 		if (array[i] <= pivote)
 		{
-			if(i != j)
+			if (i != j)
 			{
 				/* Intercambiar  */
 				swap(&array[i], &array[j]);
