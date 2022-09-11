@@ -1,6 +1,18 @@
 #include "sort.h"
 
 /**
+ * swap - check code
+ * @xp: array
+ * @yp: tamapo
+ */
+void swap(int *xp, int *yp)
+{
+	int temp = *xp;
+	*xp = *yp;
+	*yp = temp;
+}
+
+/**
  * quick_sort_aux - check code
  * @array: array
  * @first: value first
@@ -8,38 +20,39 @@
  * @size: size array
  */
 
-void quick_sort_aux(int *array, int first, int last, size_t size)
+void quick_sort_aux(int *array, int low, int high, size_t size)
 {
-	int i, j, central;
-	double pivote;
+	int j = low, i = low; /*valHolder;*/
+	int pivote;
 
-	i = first;
-	j = last;
+	pivote = array[high];
+	if(low >= high)
+		return;
 
-	central = (first + last) / 2;
-	pivote = array[central];
-
-	do {
-		while (array[i] < pivote)
-			i++;
-		while (array[j] > pivote)
-			j--;
-		if (i <= j)
+	for (; i < high; i++)
+	{
+		if (array[i] <= pivote)
 		{
-			double tmp;
-
-			tmp = array[i];
-			array[i] = array[j];
-			array[j] = tmp; /* intercambia a[i] con a[j] */
-			i++;
-			j--;
+			if(i != j)
+			{
+				/* Intercambiar  */
+				swap(&array[i], &array[j]);
+				j++;
+				print_array(array, size);
+			}
+			else
+				j++;
 		}
-	} while (i <= j);
-	if (first < j)
-		quick_sort_aux(array, first, j, size); /* proceso con sublista izqda */
-	if (i < last)
-		quick_sort_aux(array, i, last, size); /* mismo proceso sublista drcha */
+	}
+	if (j != high)
+	{
+		swap(&array[j], &array[high]);
+		print_array(array, size);
+	}
+	quick_sort_aux(array, low, j - 1, size);
+	quick_sort_aux(array, j + 1, high, size);
 }
+
 
 /**
  * quick_sort - check code
@@ -49,10 +62,10 @@ void quick_sort_aux(int *array, int first, int last, size_t size)
 
 void quick_sort(int *array, size_t size)
 {
-	int first = 0, last = size - 1;
+	size_t low = 0, high = size - 1;
 
 	if (!array | !size)
 		return;
 
-	quick_sort_aux(array, first, last, size);
+	quick_sort_aux(array, low, high, size);
 }
